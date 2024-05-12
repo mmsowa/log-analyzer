@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Server",
+      "type": "shell",
+      "command": "supervisor",
+      "args": ["server.js"],
+      "options": {
+        "cwd": "${workspaceFolder}/server"
+      }
+    },
+    {
+      "label": "Start React",
+      "type": "shell",
+      "command": "npm",
+      "args": ["start"]
+    },
+    {
+      "label": "Start Server and React",
+      "dependsOn": ["Start Server", "Start React"]
+    }
+  ]
+}
